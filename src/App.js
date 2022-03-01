@@ -34,7 +34,7 @@ function App() {
 
 function toF() {
   let apple = Math.round(((Math.round(weather.main.temp)) * 9/5) +32);
-  return apple;
+  return apple + "°F";
 }
 // °
 function toC() {
@@ -48,16 +48,8 @@ function background() {
 }
 
 
-function print(){
-let f = toF();
-let c = toC();
-  if(document.addEventListener("click", function(){})){
-    return f + '°F';
-  }
-  else {
-    return c + '°C';
-  }
-}
+
+
 
 
   return (
@@ -84,10 +76,10 @@ let c = toC();
           
           <div className="weather-box">          
           
-          <button id="one" className="temp" onClick={print()}>{print()}</button>
+          <button id="one" className="temp" onClick={toC()}>{toF() }</button>
             <div className="weather">{weather.weather[0].main}</div>
             
-            <div className="location">{print()}</div>
+            <div className="location">{toC()}</div>
           </div>
         </div>
         ) : ('')}
